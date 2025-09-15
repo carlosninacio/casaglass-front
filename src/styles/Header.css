@@ -1,0 +1,79 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;                /* ojo: mejor left:0 que right:0 */
+  width: 100%;
+  height: 60px;
+  background-color: #e8e8e8;
+  display: flex;          /* FLEX DIRECTO SOBRE HEADER */
+  justify-content: space-between;
+  align-items: center;    /* centrar verticalmente */
+  padding: 0 20px;        /* espacio a los lados */
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+
+.header:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  flex: 1;                /* ocupa todo el centro */
+  text-align: center;     /* centra el texto dentro */
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+
+/* Contenedor de usuario + imagen */
+.div-perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;    
+  margin-right: 3%;          /* espacio entre h3 y la imagen */
+}
+
+.div-perfil h3 {
+  margin: 0;
+}
+
+.perfil {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;     /* opcional: redondo */
+}
+
+.perfil-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* menú oculto por defecto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;                 /* alineado al borde derecho */
+  top: 100%;                /* justo debajo de la imagen */
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* mostrar al pasar el mouse por el contenedor */
+.perfil-container:hover .dropdown-menu {
+  display: block;
+}

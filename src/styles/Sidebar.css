@@ -1,0 +1,78 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px; /* ancho colapsado */
+  background-color: #e8e8e8;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  
+}
+
+.sidebar:hover {
+  width: 200px; /* ancho expandido */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+
+.logocasaglass{
+  margin-left: 10%;
+  width: 80%;
+  margin-top: 10%;
+  margin-bottom: 30%;
+}
+
+.logos{
+    width: 20px;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.sidebar a:hover {
+  background: #3a2890;
+  color: #ffffff;
+  
+}
+.sidebar a:hover .logos {
+  filter: brightness(0) invert(1); /* vuelve el PNG blanco */
+}
+
+.icon {
+  font-size: 20px;
+  min-width: 20px;
+  margin-right: 10px;
+}
+
+/* Ocultar el texto cuando está colapsado */
+.sidebar .text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar:hover .text {
+  opacity: 1;
+}
