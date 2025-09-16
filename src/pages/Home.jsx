@@ -7,8 +7,15 @@ export default function Home(){
         <Header username="Nicole Velandia"/>
         <Sidebar/>
         <div className="mainContent">
-        <h1>Bienvenido al Home</h1>
+        <h1>Panel de Control de Actividades</h1>
         {/* aquí pones el contenido principal */}
+        <div className="cards-grid">
+        <h4>Sede Insula</h4>
+        <div className="card">Ventas hoy:</div>
+        <div className="card">Pedidos pendientes:</div>
+        <button>Ver Inventario</button>
+        
+        </div>
       </div>
         </div>
     )

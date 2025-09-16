@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   gap: 10px;    
-  margin-right: 3%;          /* espacio entre h3 y la imagen */
+  margin-right: 1%;          /* espacio entre h3 y la imagen */
 }
 
 .div-perfil h3 {
