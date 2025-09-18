@@ -11,14 +11,14 @@
 }
 
 /* Escritorio: siempre visible */
-@media (min-width: 769px) {
+@media (min-width: 700px) {
   .sidebar {
     transform: translateX(0);
   }
 }
 
 /* Móvil: oculta por defecto */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .sidebar {
     transform: translateX(-100%);
     z-index: 2000;

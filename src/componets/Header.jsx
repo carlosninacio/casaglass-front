@@ -1,10 +1,13 @@
 import "../styles/Header.css";
 import perfil from "../assets/user.png";
+import options from "../assets/options.png";
 
 export default function Header({ username , toggleSidebar}) {
   return (
     <div className="header">
-      <div className="hamburger" onClick={toggleSidebar}></div>
+      <div className="hamburger" onClick={toggleSidebar}>
+        <img className="options" src={options}></img>
+      </div>
       <h1>CASAGLASS APP</h1>
 
       <div className="div-perfil">
