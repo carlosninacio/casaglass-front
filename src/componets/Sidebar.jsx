@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from 'react';
 import "../styles/Sidebar.css";
 import logo from "../assets/logocasaglass.png";
 import home from "../assets/home.png";
@@ -10,9 +10,10 @@ import Configuracion from "../assets/Configuracion.png";
 import salir from "../assets/logout.png"
 
 
-export default function Sidebar(){
+export default function Sidebar({isOpen}){
     return (
-        <div className="sidebar">
+
+        <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <ul>
         <li>
           <img src={logo } alt="Logo Casaglass" className="logocasaglass"/>

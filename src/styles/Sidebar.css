@@ -1,20 +1,37 @@
+/* Sidebar base */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 4rem; /* debajo del header */
   left: 0;
-  height: 100%;
-  width: 200px;
+  width: 15rem; /* ≈240px */
+  height: calc(100% - 4rem);
   background-color: #e8e8e8;
-  transition: width 0.3s ease;
-  overflow-x: hidden;
-  
-}
-.SideBar-Space{
-  margin-top: 210%;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 
+/* Escritorio: siempre visible */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}
+
+/* Móvil: oculta por defecto */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 2000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Enlaces */
 .sidebar ul {
-  list-style: bloc;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -27,43 +44,37 @@
 .sidebar a {
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #000;
   text-decoration: none;
-  padding: 15px;
+  padding: 0.9375rem;
   width: 100%;
   box-sizing: border-box;
-  transition: 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
+.sidebar a:hover {
+  background: #2424a8;
+  color: #fff;
+}
 
-.logocasaglass{
+.sidebar a:hover .logos {
+  filter: brightness(0) invert(1);
+}
+
+/* Logo */
+.logocasaglass {
   margin-left: 10%;
   width: 80%;
   margin-top: 10%;
   margin-bottom: 30%;
 }
 
-.logos{
-    width: 20px;
-    margin-left: 10%;
-    margin-right: 5%;
+.logos {
+  width: 1.25rem; /* 20px */
+  margin-left: 10%;
+  margin-right: 5%;
 }
 
-.sidebar a:hover {
-  background: #2424a8;
-  color: #ffffff;
-  
-}
-.sidebar a:hover .logos {
-  filter: brightness(0) invert(1); /* vuelve el PNG blanco */
-}
-
-.icon {
-  font-size: 20px;
-  min-width: 20px;
-  margin-right: 10px;
-}
-
-.sidebar:hover .text {
-  opacity: 1;
+.SideBar-Space {
+  margin-bottom: 20.8rem;
 }

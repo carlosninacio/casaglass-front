@@ -1,9 +1,10 @@
 import "../styles/Header.css";
 import perfil from "../assets/user.png";
 
-export default function Header({ username }) {
+export default function Header({ username , toggleSidebar}) {
   return (
     <div className="header">
+      <div className="hamburger" onClick={toggleSidebar}></div>
       <h1>CASAGLASS APP</h1>
 
       <div className="div-perfil">

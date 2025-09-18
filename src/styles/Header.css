@@ -1,57 +1,51 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;                /* ojo: mejor left:0 que right:0 */
+  left: 0;
   width: 100%;
-  height: 60px;
+  height: 4rem; /* altura relativa */
   background-color: #e8e8e8;
-  display: flex;          /* FLEX DIRECTO SOBRE HEADER */
+  display: flex;
   justify-content: space-between;
-  align-items: center;    /* centrar verticalmente */
-  padding: 0 20px;        /* espacio a los lados */
+  align-items: center;
+  padding: 0 1.25rem; /* 20px */
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
+  z-index: 1000;
 }
 
 .header h1 {
-  flex: 1;                /* ocupa todo el centro */
-  text-align: center;     /* centra el texto dentro */
+  flex: 1;
+  text-align: center;
   margin: 0;
   font-size: 1.5rem;
 }
 
-
-/* Contenedor de usuario + imagen */
 .div-perfil {
   display: flex;
   align-items: center;
-  gap: 10px;    
-  margin-right: 1%;          /* espacio entre h3 y la imagen */
-}
-
-.div-perfil h3 {
-  margin: 0;
+  gap: 0.5rem;
 }
 
 .perfil {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;     /* opcional: redondo */
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 
+/* menú desplegable */
 .perfil-container {
   position: relative;
   display: inline-block;
 }
 
-/* menú oculto por defecto */
 .dropdown-menu {
   display: none;
   position: absolute;
-  right: 0;                 /* alineado al borde derecho */
-  top: 100%;                /* justo debajo de la imagen */
+  right: 0;
+  top: 100%;
   background-color: #fff;
-  min-width: 160px;
+  min-width: 10rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   border-radius: 4px;
   z-index: 10;
@@ -59,7 +53,7 @@
 
 .dropdown-menu a {
   display: block;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   text-decoration: none;
   color: #333;
 }
@@ -68,7 +62,35 @@
   background-color: #f0f0f0;
 }
 
-/* mostrar al pasar el mouse por el contenedor */
 .perfil-container:hover .dropdown-menu {
   display: block;
 }
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+/* solo visible en móvil */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+

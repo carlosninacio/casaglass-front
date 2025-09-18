@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import Sidebar from "../componets/Sidebar.jsx";
-import Header from "../componets/Header.jsx";
+// src/pages/InventoryPage.jsx
+import { useState } from "react";
+import Layout from "../layouts/DashboardLayout";
 import Table from "../componets/InventoryTable.jsx";
 import Filter from "../componets/InventaryFilters.jsx";
-
 import "../styles/InventoryPage.css";
 
-export default function Inventory (){
-    const [filters, setFilters] = useState({
+export default function InventoryPage() {
+  const [filters, setFilters] = useState({
     search: "",
     category: "",
     status: "",
@@ -15,22 +14,9 @@ export default function Inventory (){
     priceMax: "",
   });
 
-     const [data, setData] = useState([
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 100 , precioEspecial: 90 },
-    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48,cantidadInsula: 100,cantidadCentro: 100,cantidadPatios: 100, precio: 50 , precioEspecial: 40 },
-    
+  const [data] = useState([
+    { id: 1, nombre: "Vidrio templado", categoria: "Vidrios", cantidad: 100, precio: 100 },
+    { id: 2, nombre: "Perfil aluminio", categoria: "Aluminio", cantidad: 48, precio: 50 },
     // ...
   ]);
 
@@ -46,32 +32,17 @@ export default function Inventory (){
       const max = filters.priceMax ? Number(filters.priceMax) : Infinity;
       return precio >= min && precio <= max;
     });
-    
-    return(
-        //div general
-        <div >
-            <Header/>
-            <Sidebar/>
-            
-            
-            <div> 
-                <h3>Filtros de busqueda:</h3>
-                <div className="filters">
-                
-                <Filter filters={filters} onChange={setFilters} />
 
+  return (
+    <Layout>
+      <h3>Filtros de búsqueda:</h3>
+      <div className="filters">
+        <Filter filters={filters} onChange={setFilters} />
+      </div>
 
-                </div>
-                <div className="table">
-                    <Table data={filteredData} />
-
-                </div>
-                <div>
-                
-                </div>
-            </div>
-            
-        </div>
-
-    );
+      <div className="table">
+        <Table data={filteredData} />
+      </div>
+    </Layout>
+  );
 }
