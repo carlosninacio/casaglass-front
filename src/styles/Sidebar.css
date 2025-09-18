@@ -3,20 +3,18 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 60px; /* ancho colapsado */
+  width: 200px;
   background-color: #e8e8e8;
   transition: width 0.3s ease;
   overflow-x: hidden;
   
 }
-
-.sidebar:hover {
-  width: 200px; /* ancho expandido */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.SideBar-Space{
+  margin-top: 210%;
 }
 
 .sidebar ul {
-  list-style: none;
+  list-style: bloc;
   padding: 0;
   margin: 0;
 }
@@ -52,7 +50,7 @@
 }
 
 .sidebar a:hover {
-  background: #3a2890;
+  background: #2424a8;
   color: #ffffff;
   
 }
@@ -64,13 +62,6 @@
   font-size: 20px;
   min-width: 20px;
   margin-right: 10px;
-}
-
-/* Ocultar el texto cuando está colapsado */
-.sidebar .text {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
 }
 
 .sidebar:hover .text {

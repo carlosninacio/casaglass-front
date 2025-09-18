@@ -47,12 +47,16 @@ export default function Sidebar(){
             <span className="text">Movimientos</span>
           </a>
         </li>
+        <div className="SideBar-Space">
+
+        </div>
         <li>
           <a href="#config">
             <img src={Configuracion } alt="CONFIGURACION " className="logos"/>
             <span className="text">Configuración</span>
           </a>
         </li>
+        
 
         <li >
             <a href="#logout">

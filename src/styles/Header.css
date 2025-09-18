@@ -13,11 +13,6 @@
   transition: box-shadow 0.3s ease;
 }
 
-
-.header:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
 .header h1 {
   flex: 1;                /* ocupa todo el centro */
   text-align: center;     /* centra el texto dentro */
