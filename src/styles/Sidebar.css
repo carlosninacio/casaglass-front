@@ -1,5 +1,9 @@
 /* Sidebar base */
+<<<<<<< HEAD
 /* PRUEBAAA*/
+=======
+/* Prueba commit */
+>>>>>>> d0bd537fed2ecb62405e9359f1695520c56f4b3d
 .sidebar {
   position: fixed;
   top: 4rem; /* debajo del header */
